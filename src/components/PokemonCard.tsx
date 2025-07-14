@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { getPokemonImgById, getSpriteById, getTypeBg } from "../helpers/common";
 import { usePokemonContext } from "../contexts/PokemonContext";
+import { getPokemonImgById, getSpriteById } from "../helpers/common";
 import TypeTag from "./TypeTag";
 
 interface PokemonCardProps {
