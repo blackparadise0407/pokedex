@@ -65,6 +65,12 @@ export const PokemonDetail = React.memo(function PokemonDetail() {
             ? "/no-pokemon-selected-image.png"
             : getSpriteById(pokemon.id)
         }
+        onError={(e: any) => {
+          if (pokemon) {
+            e.target.src = getPokemonImgById(pokemon.id);
+            e.target.onerror = undefined;
+          }
+        }}
         alt=""
       />
       {!id ? (

@@ -29,6 +29,10 @@ export const PokemonCard = React.memo(function PokemonCard({
         loading="lazy"
         src={isHovering ? getSpriteById(data.id) : getPokemonImgById(data.id)}
         style={{ imageRendering: "pixelated" }}
+        onError={(e: any) => {
+          e.target.src = getPokemonImgById(data.id);
+          e.target.onerror = undefined;
+        }}
         alt=""
       />
       <div className="mt-6 font-semibold text-gray-400 text-xs">
